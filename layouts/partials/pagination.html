@@ -1,9 +1,9 @@
-<div>
+<div class="ph2">
 {{ if .Paginator.HasPrev }}
-	<a href="{{ .Paginator.Prev.URL }}">Previous Page</a>
+	<a class="f4-ns link dim ba ph3 pv2 mb2 dib black georgia" href="{{ .Paginator.Prev.URL }}">← Previous Page</a>
 {{ end }}
-{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+<!-- {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }} -->
 {{ if .Paginator.HasNext }}
-	<a href="{{ .Paginator.Next.URL }}">Next Page</a>
+	<a class="f4-ns link dim ba ph3 pv2 mb2 dib black georgia" href="{{ .Paginator.Next.URL }}">Next Page →</a>
 {{ end }}
 </div>

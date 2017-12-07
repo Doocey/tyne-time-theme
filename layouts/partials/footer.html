@@ -1,5 +1,40 @@
-	<footer>
-		<p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
-	</footer>
+<footer class="bg-near-black ph3 pv4 white georgia">
+
+	<div class="mw9 pt3">
+		<div class="flex flex-wrap ma4-ns">
+			<!-- Site Links -->
+			<div class="w-100 w-50-ns order-2 order-1-ns">
+				<ul class="list ph3 mb3 f6 ph5-ns pv1">
+					<li class="dib mh2"><a href="/" class="link white">Home</a></li> /
+					<li class="dib mh2"><a href="/about/" class="link white">About</a></li> /
+					<li class="dib mh2"><a href="/contact/" class="link white">Contact</a></li> /
+					<li class="dib mh2"><a href="/advertise/" class="link white">Advertise</a></li> /
+					<li class="dib mh2"><a href="/friends/" class="link white">Friends</a></li> /
+					<li class="dib mh2"><a href="/sitemap/" class="link white">Sitemap</a></li>
+				</ul>
+			</div>
+			<!-- Social Icons -->
+			<div class="w-100 w-30-ns order-1 order-2-ns">
+				<ul class="mhn2 tc pl0">
+					{{ partial "social-icon" (dict "link" "#" "svg" "facebook") }}
+					{{ partial "social-icon" (dict "link" "#" "svg" "twitter") }}
+				</ul>
+			</div>
+			<!-- NewsNow Logo -->
+			<div class="w-20 order-3 order-3-ns tc center bg-gray">
+					<p class="white">
+						{{ partial "newsnow" }}
+					</p>
+			</div>
+		</div>
+	</div>
+<p class="center tc f6 white-60">All images reserved to their respectful owners. Developed by me, in Hugo. 😀</p>
+</footer>
+
+{{ partial "svg" . }}
+
+<script src="/js/app.js"></script>
+
 </body>
+
 </html>

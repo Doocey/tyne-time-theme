@@ -1,13 +1,19 @@
-	<article>
-		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-		<time>{{ .Date.Format "02.01.2006 15:04" }}</time>
-		{{ range .Params.tags }}
-		<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-		{{ end }}
-		<div>
-			{{ .Summary }}
-			{{ if .Truncated }}
-				<a href="{{ .Permalink }}">Read more...</a>
-			{{ end }}
-		</div>
-	</article>
+<article class="pv3 pt4 ph3 ma2 bg-white br3">
+	    <div class="flex flex-column flex-row-l pa1 pa3-ns">
+	      <div class="w-100 w-60-l pr3-l order-2 order-1-l">
+					<a href="{{ .Permalink }}" class="no-underline bg-grey-1 br1 mb2 db w-100">
+	        	<h2 class="b near-black georgia f2-ns f3 fw2 lh-title mt0">{{ .Title }}</h2>
+					</a>
+	        <p class="lh-copy georgia f4-ns">
+	          {{ if .Plain }}
+							{{ safeHTML .Plain | truncate 370 | markdownify}}
+						{{ end }}
+	        </p>
+
+					<a class="f4-ns link dim ba ph3 pv2 mb2 dib black georgia" href="{{ .Permalink }}">Keep Reading →</a>
+	      </div>
+	      <div class="pl3-l order-1 order-2-l mb3 mb0-ns w-100 w-40-l">
+      		{{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+	      </div>
+	    </div>
+</article>
