@@ -1,11 +1,19 @@
-{{ partial "header.html" . }}
-{{ partial "nav.html" }}
+{{ partialCached "header.html" . }}
+{{ partialCached "nav.html" . }}
 	<main>
-		{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-		{{ range $paginator.Pages }}
-			{{ partial "article.html" . }}
-		{{ end }}
+		<section class="bg-white ph3">
+			<div class="f5 f4-ns lh-copy pa3">
+				<h3>Posts Filed Under: {{.Title}}</h3>
+				{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+				<ul class="list pl1">
+					{{ range $paginator.Pages }}
+						<li class="link">
+							> <a class="black no-underline" href="{{.Permalink}}">{{.Title}}</a>
+						</li>
+					{{ end }}
+				</ul>
+			</div>
+		</section>
 		{{ partial "pagination.html" . }}
 	</main>
-{{ partial "sidebar.html" . }}
-{{ partial "footer.html" . }}
+{{ partialCached "footer.html" . }}

@@ -1,4 +1,4 @@
-<footer class="bg-near-black ph3 pv4 white georgia">
+<footer class="bg-near-black ph3 pv4 white">
 
 	<div class="mw9 pt3">
 		<div class="flex flex-wrap ma4-ns">
@@ -21,20 +21,21 @@
 				</ul>
 			</div>
 			<!-- NewsNow Logo -->
-			<div class="w-20 order-3 order-3-ns tc center bg-gray">
+			<div class="w-20 order-3 order-3-ns tc center">
 					<p class="white">
 						{{ partial "newsnow" }}
 					</p>
+					<style>footer a, footer a:visited {color:white}</style>
 			</div>
 		</div>
 	</div>
-<p class="center tc f6 white-60">All images reserved to their respectful owners. Developed by me, in Hugo. 😀</p>
+<p class="center tc f6 white-60">All images reserved to their respectful owners.</p>
 </footer>
 
 {{ partial "svg" . }}
 
 <script src="/js/app.js"></script>
-
+{{ template "_internal/google_analytics_async.html" . }}
 </body>
 
 </html>
