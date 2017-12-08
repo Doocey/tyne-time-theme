@@ -45,17 +45,19 @@
 			</div>
 
 			<hr class="b--black-10">
-			Tagged Under:
-			<ul id="tags" class="list pa0">
-				{{ range .Params.tags }}
-				<li class="dib mr1 mb2">
-					<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"
-						 class="f6 db pa1 link dim dark-gray ba b--black-20">
-							{{ . }}
-					</a>
-				</li>
-				{{ end }}
-			</ul>
+			{{ if .Params.categories }}
+			<span class="tracked">FILED UNDER:</span>
+				<ul id="tags" class="list pa0">
+					{{ range .Params.categories }}
+					<li class="dib mr1 mb2">
+						<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"
+							 class="f6 db pa1 link dim dark-gray ba b--black-20">
+								{{ . }}
+						</a>
+					</li>
+					{{ end }}
+				</ul>
+			{{ end }}
 		</article>
 		<div>
 			{{ partial "author-bio" .}}
